@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!----------------------- NAVIGATION BAR ----------------------->
+    <nav class="navbar">
+        <div class="nav-container">
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <a href="#" class="nav-logo">
+                <img src="images/website-logo.png" alt="">
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">HOME</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#order" class="nav-link has-dropdown">ORDER</a>
+                    <div class="dropdown">
+                        <div class="dropdown-item">
+                            <a href="#online-order">Order Online</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <a href="#catering">Catering</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <a href="#delivery">Delivery Options</a>
+                        </div>
+                    </div>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#products" class="nav-link has-dropdown">PRODUCTS</a>
+                    <div class="dropdown">
+                        <div class="dropdown-item">
+                            <a href="#breads">Artisan Breads</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <a href="#pastries">Pastries</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <a href="#cakes">Cakes</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <a href="#seasonal">Seasonal Items</a>
+                        </div>
+                    </div>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#hours" class="nav-link has-dropdown">OUR HOURS</a>
+                    <div class="dropdown">
+                        <div class="dropdown-item">
+                            <a href="#store-hours">Store Hours</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <a href="#holiday-hours">Holiday Hours</a>
+                        </div>
+                    </div>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#about" class="nav-link has-dropdown">ABOUT US</a>
+                    <div class="dropdown">
+                        <div class="dropdown-item">
+                            <a href="#our-story">Our Story</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <a href="#team">Our Team</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <a href="#location">Location</a>
+                        </div>
+                        <div class="dropdown-item">
+                            <a href="#contact">Contact</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Spacer to prevent content from hiding under fixed navbar -->
+    <div class="navbar-spacer"></div>
+
+
+
+
+    <!----------------------- HERO SECTION ----------------------->
+    <section id="heroSection">
+        <div class="hero-intro">
+            <h2>Savor The Slice, Love The Loaf</h2>
+            <button class="hero-button">
+                <a href="">Our Menu</a>
+            </button>
+        </div>
+    </section>
+
+
+    <!----------------------- PREVIEW SECTION ----------------------->
+    <section id="previewSection">
+        <div class="preview-intro">
+            <h2 data-text="Handcrafted With Love">Handcrafted With Love</h2>
+            <p>
+                Our handcrafted dessert loaves bring comfort 
+                and indulgence to every bite. From rich chocolate 
+                chip banana bread to zesty lemon drizzle and warm 
+                cinnamon swirl, each loaf is baked with premium ingredients 
+                and a touch of homemade love.
+            </p>
+            <a href="">View More</a>
+        </div>
+
+        <div class="preview-slider" aria-roledescription="carousel">
+            <div class="preview-track">
+                <div class="preview-slide" role="group" aria-roledescription="slide" aria-label="Slide 1">
+                <img src="images/banana-walnut.jpg" alt="Banana Walnut" width="240" height="300">
+                <h3>Banana Walnut</h3>
+                </div>
+
+                <div class="preview-slide" role="group" aria-roledescription="slide" aria-label="Slide 2">
+                <img src="images/lemon-poppy.jpg" alt="Lemon Drizzle" width="240" height="300">
+                <h3>Lemon Drizzle</h3>
+                </div>
+
+                <div class="preview-slide" role="group" aria-roledescription="slide" aria-label="Slide 3">
+                <img src="images/pumpkin-spice.jpg" alt="Pumpkin Spice" width="240" height="300">
+                <h3>Pumpkin Spice</h3>
+                </div>
+
+                <!-- Added slides -->
+                <div class="preview-slide" role="group" aria-roledescription="slide" aria-label="Slide 4">
+                <img src="images/chocolate-chip.jpg" alt="Chocolate Chip" width="240" height="300">
+                <h3>Chocolate Chip</h3>
+                </div>
+
+                <div class="preview-slide" role="group" aria-roledescription="slide" aria-label="Slide 5">
+                <img src="images/rum-fruitcake.jpg" alt="Lemon Berry" width="240" height="300">
+                <h3>Rum Fruitcake</h3>
+                </div>
+            </div>
+
+            <div class="preview-dots" role="tablist" aria-label="Carousel navigation"></div>
+            </div>
+
+
+
+    </section>
+
+
+    <!----------------------- ABOUT SECTION ----------------------->
+    <section id="aboutSection">
+        <div class="about-intro">
+            <h2>Baked with Love, Born in Chicago</h2>
+            <p>
+                Founded in 2025, we are a passionate couple from Chicago who turned 
+                our love for baking into a heartfelt business. What began as weekend 
+                experiments in our city kitchen has grown into a bakery dedicated to 
+                creating dessert loaves that feel like home. Each loaf is crafted with 
+                premium ingredients, a touch of Midwestern warmth, and a promise of freshness 
+                in every slice. Whether you’re treating yourself, sharing with loved ones, or 
+                sending a thoughtful gift, our mission is simple: to make life a little sweeter—one 
+                loaf at a time.
+            </p>
+        </div>
+
+        <div class="about-image"></div>
+    </section>
+
+
+    <!----------------------- MENU SECTION ----------------------->
+    <section id="menuSection">
+        <div class="menu-intro">
+            <h2 class="menu-intro" data-text="check out our flavors!">check out our flavors!</h2>
+        </div>
+
+        <div class="menu-products">
+            <div class="menu-products">
+                <!-- Banana Walnut -->
+                <a href="product-page.html" class="product-link">
+                    <div class="product-container">
+                        <div class="product-image"></div>
+                        <div class="product-name">
+                            <h3>Banana Walnut</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Blueberry -->
+                <a href="product-page.html" class="product-link">
+                    <div class="product-container">
+                        <div class="product-image"></div>
+                        <div class="product-name">
+                            <h3>Blueberry</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Chocolate -->
+                <a href="product-page.html" class="product-link">
+                    <div class="product-container">
+                        <div class="product-image"></div>
+                        <div class="product-name">
+                            <h3>Chocolate</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Red Velvet -->
+                <a href="product-page.html" class="product-link">
+                    <div class="product-container">
+                        <div class="product-image"></div>
+                        <div class="product-name">
+                            <h3>Red Velvet</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Pumpkin Spice -->
+                <a href="product-page.html" class="product-link">
+                    <div class="product-container">
+                        <div class="product-image"></div>
+                        <div class="product-name">
+                            <h3>Pumpkin Spice</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Chocolate Chip -->
+                <a href="product-page.html" class="product-link">
+                    <div class="product-container">
+                        <div class="product-image"></div>
+                        <div class="product-name">
+                            <h3>Chocolate Chip</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Strawberry -->
+                <a href="product-page.html" class="product-link">
+                    <div class="product-container">
+                        <div class="product-image"></div>
+                        <div class="product-name">
+                            <h3>Strawberry</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Maple Walnut -->
+                <a href="product-page.html" class="product-link">
+                    <div class="product-container">
+                        <div class="product-image"></div>
+                        <div class="product-name">
+                            <h3>Maple Walnut</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Cranberry Orange -->
+                <a href="product-page.html" class="product-link">
+                    <div class="product-container">
+                        <div class="product-image"></div>
+                        <div class="product-name">
+                            <h3>Cranberry Orange</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Cinnamon Swirl -->
+                <a href="product-page.html" class="product-link">
+                    <div class="product-container">
+                        <div class="product-image"></div>
+                        <div class="product-name">
+                            <h3>Cinnamon Swirl</h3>
+                        </div>
+                    </div>
+                </a>
+
+                
+                
+            </div>
+        </div>
+    </section>
+
+
+    <!----------------------- CONTACT SECTION ----------------------->
+    <!----------------------- CONTACT SECTION ----------------------->
+<section id="contactSection">
+    <div class="contact-intro">
+        <h2 data-text="LET'S GET IN TOUCH">LET'S GET IN TOUCH</h2>
+        <p>
+            Have A Question Or Craving? Get In Touch With Us 
+            To Place Your Order, Ask About Our Flavors, Or Plan 
+            The Perfect Gift—Our Oven (And Inbox) Is Always 
+            Warm And Ready For You!
+        </p>
+    </div>
+
+    <div id="messageContainer"></div>
+
+    <form class="contact-form" id="contactForm">
+        <!-- Web3Forms Access Key - Replace YOUR_ACCESS_KEY with your actual key -->
+        <input type="hidden" name="access_key" value="5859c3e1-f867-4635-9559-d832ee856a88">
+        
+        <!-- Optional: Customize email subject -->
+        <input type="hidden" name="subject" value="New Contact Form Submission from Bakery Website">
+        
+        <!-- Optional: Redirect after submission -->
+        <input type="hidden" name="redirect" value="https://web3forms.com/success">
+
+        <div class="form-group">
+            <label for="name">Your Name <span class="required">*</span></label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Your Email <span class="required">*</span></label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="custom_subject">Subject</label>
+            <input type="text" id="custom_subject" name="custom_subject">
+        </div>
+
+        <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" placeholder="Tell us about your inquiry..."></textarea>
+        </div>
+
+        <!-- Honeypot for spam protection -->
+        <input type="checkbox" name="botcheck" id="" style="display: none;">
+
+        <button type="submit" class="submit-btn" id="submitBtn">
+            <div class="btn-content">
+                <div class="loading" id="loading"></div>
+                <span id="btnText">SEND</span>
+            </div>
+        </button>
+    </form>
+</section>
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
