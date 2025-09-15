@@ -102,9 +102,69 @@
 
 
 
+        document.addEventListener("scroll", function () {
+  const heroSection = document.getElementById("heroSection");
+  const navbar = document.querySelector(".navbar");
+  const navLogo = document.querySelector(".nav-logo");
+
+  if (window.innerWidth >= 1024) {
+    if (window.scrollY > heroSection.offsetHeight - navbar.offsetHeight) {
+      navLogo.classList.add("shrink");
+    } else {
+      navLogo.classList.remove("shrink");
+    }
+  } else {
+    // Reset logo if resizing back to mobile
+    navLogo.classList.remove("shrink");
+  }
+});
 
 
 
+
+
+
+
+
+
+
+
+/* HERO SLIDER (SLIDE EFFECT) */
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.querySelector("#heroSection .hero-slider");
+  const slides = document.querySelectorAll("#heroSection .hero-slide");
+  const dotsContainer = document.querySelector("#heroSection .hero-dots");
+  let currentIndex = 0;
+  let interval;
+
+  // Create dots
+  slides.forEach((_, i) => {
+    const dot = document.createElement("button");
+    if (i === 0) dot.classList.add("active");
+    dot.addEventListener("click", () => showSlide(i));
+    dotsContainer.appendChild(dot);
+  });
+  const dots = dotsContainer.querySelectorAll("button");
+
+  function showSlide(index) {
+    currentIndex = index;
+    slider.style.transform = `translateX(-${100 * currentIndex}%)`;
+    dots.forEach(dot => dot.classList.remove("active"));
+    dots[currentIndex].classList.add("active");
+    resetInterval();
+  }
+
+  function nextSlide() {
+    showSlide((currentIndex + 1) % slides.length);
+  }
+
+  function resetInterval() {
+    clearInterval(interval);
+    interval = setInterval(nextSlide, 10000); // 10 seconds
+  }
+
+  resetInterval();
+});
 
 
 
@@ -247,6 +307,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // init
   recalc();
   goToSlide(1, false);
+});
+
+// handle wrapping after transition
+track.addEventListener('transitionend', () => {
+  if (index <= 0) {
+    index = realCount;
+    requestAnimationFrame(() => goToSlide(index, false));
+  } else if (index >= slides.length - 1) {
+    index = 1;
+    requestAnimationFrame(() => goToSlide(index, false));
+  }
 });
 
 

@@ -281,6 +281,8 @@ th, td {
     height: 60px;
 }
 
+
+
 .nav-logo span {
     color: #e91e63;
     font-style: italic;
@@ -427,6 +429,120 @@ th, td {
     height: clamp(60px, 12vw, 70px);
 }
 
+.navbar-button-desktop {
+    display: none;
+}
+
+
+
+
+
+
+
+@media (min-width: 1024px) {
+    #heroSection {
+        height: 92vh !important;
+    }
+    .nav-container {
+        justify-content: space-between;
+        padding: 1rem 3rem;
+    }
+
+    .nav-logo {
+        position: static;
+        transform: none;
+        margin-right: auto;
+        background-color: white;
+        border-radius: 10px;
+        margin-bottom: -8rem;
+        padding: 3rem 1rem;
+        box-shadow: 50% var(--shadowdark);
+        transition: all 0.3s ease;
+    }
+
+    .nav-logo img {
+        height: 100px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-logo.shrink {
+      padding: 0.25rem 0.75rem;
+      margin-bottom: 0;
+      background-color: transparent;
+      box-shadow: none;
+  }
+
+  .nav-logo.shrink img {
+      height: 75px;
+  }
+
+    .hamburger {
+        display: none;
+    }
+
+    .nav-menu {
+        position: static;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        width: auto;
+        height: auto;
+        background: none;
+        gap: 2rem;
+        overflow: visible;
+    }
+
+    .nav-item {
+        border: none;
+        width: auto;
+    }
+
+    .nav-link {
+        font-size: 1.25rem;
+        padding: 0.5rem 0;
+        font-weight: 400;
+        color: #323232;
+        
+    }
+
+    /* Hide dropdowns completely on desktop */
+    .dropdown {
+        display: none !important;
+    }
+
+        .nav-link.has-dropdown::after {
+        display: none;
+    }
+
+
+
+
+    .nav-item-order {
+        display: none;
+    }
+
+    .navbar-button-desktop {
+        background-color: #ffffff;
+        padding: .25rem 1rem;
+        border-radius: 5px;
+        margin-bottom: 3px;
+        outline: #cc007e 3px solid;
+        display: block;
+    }
+
+    .navbar-button-desktop a {
+        color: #CC007E;
+        text-transform: uppercase;
+    }
+
+    .navbar-button-desktop:hover {
+        background-color: #CC007E;
+    }
+
+    .navbar-button-desktop a:hover {
+        color: white;
+    }
+}
 
 
 
@@ -447,68 +563,107 @@ th, td {
 
 
 
-
-
-
-
-
-
-
+/* HERO SECTION */
 #heroSection {
-    height: 50vh;
-    background-image: url(images/hero-background.webp);
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
+  position: relative;
+  height: 70vh;
+  overflow: hidden;
 }
 
-#heroSection::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(180deg, #000000 0%, #cc007e 100%);
-    opacity: 0.4;
-    z-index: 1;
-    height: 50vh;
+/* GRADIENT OVERLAY PER SLIDE */
+.hero-slide::before { 
+  content: ''; 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  background: linear-gradient(180deg, #000000 0%, #cc007e 100%); 
+  opacity: 0.4; 
+  z-index: 1; 
+  pointer-events: none;
 }
 
+/* SLIDER CONTAINER */
+.hero-slider {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
+  position: relative; /* ✅ needed for layering */
+  z-index: 0;         /* keeps background layer */
+}
+
+/* EACH SLIDE */
+.hero-slide {
+  flex: 0 0 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* ✅ needed so ::before sits inside */
+  z-index: 0;
+}
+
+/* HERO INTRO (above overlay) */
+.hero-intro {
+  position: relative;
+  z-index: 2; /* ✅ text & buttons above gradient */
+  text-align: center;
+  color: white;
+  margin-bottom: 1rem;
+  max-width: 330px;
+}
 
 .hero-intro {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: 100;
-    gap: 1rem;
-}
-
-.hero-intro h2 {
-    text-align: center;
-    padding: 0 1.5rem;
-    line-height: 2.5rem;
-    text-shadow: 2px 1.5px 0px #CC007E;
+    text-shadow: 3px 1px 0px #CC007E;
     text-transform: uppercase;
-    max-width: 400px;
 }
 
-/* Hero Button */
-.hero-button {
-    background: linear-gradient(180deg, #CC007E 42%, #78054C 100%);
-    padding: .5rem 2rem;
-    border-radius: 10px;
-    border: 3px solid white;
-}
-
+/* Hero Button */ .hero-button { background: linear-gradient(180deg, #CC007E 42%, #78054C 100%); padding: .5rem 2rem; border-radius: 10px; border: 3px solid white; color: white; margin-top: 1rem;}
 .hero-button a {
     color: white;
     text-transform: uppercase;
 }
+
+/* DOTS */
+.hero-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+  background-color: #CC007E;
+  padding: .5rem;
+  border-radius: 1rem;
+  border: 3px solid white;
+}
+
+.hero-dots button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.hero-dots button.active {
+  
+  outline: 3px solid white;
+}
+
+.hero-cta {
+    display: none;
+}
+
+
+
 
 
 
@@ -523,6 +678,10 @@ th, td {
         font-size: 3rem;
         line-height: 3.25rem;
     }
+
+    .hero-intro {
+        max-width: 400px;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -536,6 +695,7 @@ th, td {
 
     .hero-intro {
         gap: 2rem;
+        max-width: 550px;
     }
 
     .hero-intro h2 {
@@ -545,6 +705,98 @@ th, td {
         text-shadow: 3px 1.5px 0px #CC007E;
     }
 }
+
+@media screen and (min-width: 1024px) {
+    .hero-slide {
+        justify-content: start;
+        padding: 2rem;
+    }
+    .hero-intro {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: start;
+        margin: 0 auto;
+        gap: 0;
+        padding-bottom: 3.5rem;
+        padding-left: 0;
+
+    }
+
+    .hero-button {
+        margin-right: auto;
+    }
+    .hero-cta {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        flex-direction: column;
+        margin-left: auto;
+        height: 250px;
+        width: 400px;
+        border-radius: 10px;
+        border: 3px solid white;
+        background-color: #cc007ea8;
+        z-index: 1;
+        gap: 1rem;
+        padding: 0 1rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .hero-cta h3 {
+        font-size: 2rem;
+    }
+
+    .hero-cta p {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .hero-cta-button {
+        border: 3px solid white;
+        border-radius: 10px;
+        padding: .5rem 2rem;
+    }
+
+    .hero-cta-button a {
+        color: white;
+        text-transform: uppercase;
+    }
+}
+
+@media screen and (min-width: 1248px) {
+    .hero-slide {
+        padding-right: 3rem;
+    }
+    
+    .hero-intro h2 {
+        font-size: 4.5rem;
+        width: 800px;
+        line-height: 5rem;
+    }
+
+    .hero-button {
+        margin-left: .25rem;
+    }
+
+    .hero-cta {
+        margin-top: auto;
+        width: 500px;
+        margin-bottom: 2rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -653,7 +905,7 @@ th, td {
 .preview-track {
   display: flex;
   align-items: center;
-  transition: transform 0.45s cubic-bezier(.22,.9,.32,1);
+  transition: transform 0.6s cubic-bezier(.55,.06,.68,.19); /* softer ease */
   will-change: transform;
   overflow: visible;      /* track itself can overflow horizontally for peeking */
 }
@@ -749,6 +1001,12 @@ th, td {
 
 
 @media screen and (min-width: 768px) {
+    #previewSection {
+        padding-bottom: 5rem;
+    }
+    .preview-intro {
+        padding: 5rem 1.25rem 2.5rem 1.25rem;
+    }
     .preview-intro h2 {
         font-size: 4rem;
         max-width: 500px;
@@ -758,6 +1016,34 @@ th, td {
     .preview-intro p {
         font-size: 1.25rem;
         max-width: 700px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .preview-slide {
+        flex: 0 0 350px;
+        width: 350px;
+        margin: 0 9.5px;         /* adjust to increase/decrease neighbor peek */
+        background: var(--colorprimary);
+        text-align: center;
+        overflow: hidden;       /* IMPORTANT: hides any vertical overflow inside slide */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .preview-slide img {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #previewSection {
+        padding-bottom: 6rem;
+    }
+    .preview-intro {
+        padding: 6rem 1.25rem 2.5rem 1.25rem;
     }
 }
 
@@ -883,6 +1169,9 @@ th, td {
 
 
 @media screen and (min-width: 768px) {
+    #aboutSection {
+        padding: 5rem 1.25rem;
+    }
     .about-image {
         max-width: 655px;
     }
@@ -905,6 +1194,7 @@ th, td {
         background: linear-gradient(0deg, #ffffff 0%, #cc007e 50%);
         overflow-x: hidden;
         gap: 4rem;
+        padding: 6rem 1.25rem;
     }
 
     .about-intro {
@@ -983,7 +1273,7 @@ th, td {
         }
 
         .menu-intro {
-            padding-bottom: 2rem;
+            padding-bottom: 1rem;
         }
 
         .menu-intro h2 {
@@ -1153,6 +1443,10 @@ th, td {
         }
 
         @media screen and (min-width: 768px) {
+            #menuSection {
+                padding: 5rem 1.25rem;
+            }
+            
             .menu-intro h2 {
                 font-size: 4rem;
                 line-height: 4.25rem;
