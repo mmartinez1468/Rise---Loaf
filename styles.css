@@ -457,12 +457,12 @@ th, td {
         margin-bottom: -8rem;
         padding: 3rem 1rem;
         box-shadow: 50% var(--shadowdark);
-        transition: all 0.3s ease;
+        transition: all 0.1s ease;
     }
 
     .nav-logo img {
         height: 100px;
-        transition: all 0.3s ease;
+        transition: all 0.1s ease;
     }
 
     .nav-logo.shrink {
@@ -1474,6 +1474,10 @@ th, td {
    ========================================================================== */
 
 #contactSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 0 auto;
     padding: 4rem 1.25rem;
     background-color: #ED74BF;
@@ -1482,6 +1486,7 @@ th, td {
 .contact-intro {
     text-align: center;
     margin-bottom: 2rem;
+    max-width: 475px;
 }
 
 .contact-intro h2 {
@@ -1503,6 +1508,8 @@ th, td {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    max-width: 475px;
+    width: 100%;
 }
 
 .form-group {
@@ -1521,7 +1528,7 @@ th, td {
 }
 
 .required {
-    color: #cc007e;
+    color: #ffffff;
 }
 
 .form-group input,
@@ -1622,4 +1629,325 @@ th, td {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.contact-info {
+    display: none;
+}
+
+@media screen and (min-width: 550px) {
+    .contact-intro h2 {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .contact-intro h2 {
+        font-size: 4rem;
+        line-height: 4.25rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #contactSection {
+        flex-direction: row;
+        gap: 3rem;
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+
+    .contact-intro {
+        text-align: start;
+        justify-content: start;
+        align-items: start;
+        margin-bottom: auto;
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    .contact-info-container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 75px;
+        background: linear-gradient(90deg, #CC007E 42%, #ED74BF 100%);
+        border-radius: 38px 20px 20px 38px;
+        box-shadow: var(--shadowdark);
+        outline: .5px solid rgba(0, 0, 0, 0.178);
+    }
+
+    .contact-info-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 75px;
+        width: 75px;
+        border-radius: 50%;
+        box-shadow: var(--shadowdark);
+        background: linear-gradient(-90deg, #CC007E 42%, #ED74BF 100%);
+    }
+
+    .contact-info-logo svg {
+        height: 50px;
+    }
+
+    .contact-info-container h3 {
+        padding-left: 1rem;
+        font-size: 1.25rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   13. FOOTER
+========================================================================== */
+.footer-section {
+          background: #78054C;
+          position: relative;
+        }
+        .footer-container {
+          padding: 1rem;
+        }
+        .footer-cta {
+          border-bottom: 1px solid #ffffff;
+          padding-bottom: 1rem;
+        }
+        .single-cta svg {
+          color: #ffffff;
+          height: 25px;
+          float: left;
+          margin-top: 5px;
+        }
+        .cta-text {
+          padding-left: 15px;
+          display: inline-block;
+        }
+        .cta-text h4 {
+          color: #fff;
+          font-size: 20px;
+          font-weight: 600;
+          margin-bottom: 2px;
+        }
+        .cta-text span {
+          color: #ffffff;
+          font-size: 15px;
+        }
+        .footer-content {
+          position: relative;
+          z-index: 2;
+        }
+        .footer-pattern img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 330px;
+          background-size: cover;
+          background-position: 100% 100%;
+        }
+        .footer-logo {
+          margin-bottom: 30px;
+        }
+        .footer-logo img {
+            max-width: 200px;
+            border-radius: 5px;
+        }
+        .footer-text p {
+          margin-bottom: 14px;
+          font-size: 14px;
+          color: #ffffff;
+          line-height: 28px;
+        }
+        .footer-social-icon-wrapper {
+          display: flex;
+          padding-bottom: 1rem;
+        }
+        .footer-social-icon span {
+          color: #fff;
+          display: block;
+          font-size: 20px;
+          font-weight: 700;
+          font-family: 'Poppins', sans-serif;
+          margin-bottom: 20px;
+        }
+        .footer-social-icon a {
+          color: #fff;
+          font-size: 16px;
+          margin-right: 15px;
+        }
+        .footer-social-icon svg {
+          height: 40px;
+          width: 40px;
+          text-align: center;
+          line-height: 38px;
+          border-radius: 50%;
+        }
+        .facebook-bg{
+          background: #3B5998;
+        }
+        .twitter-bg{
+          background: #55ACEE;
+        }
+        .google-bg{
+          background: #DD4B39;
+        }
+        .footer-widget {
+          padding-top: 1rem;
+        }
+        .footer-widget-heading h3 {
+          color: #fff;
+          font-size: 20px;
+          font-weight: 600;
+          margin-bottom: 40px;
+          position: relative;
+        }
+        .footer-widget-heading h3::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -15px;
+          height: 2px;
+          width: 50px;
+          background: #ffffff;
+        }
+        .footer-widget ul li {
+          display: inline-block;
+          float: left;
+          width: 50%;
+          margin-bottom: 12px;
+        }
+        .footer-widget ul li a:hover{
+          color: #cc007e;
+        }
+        .footer-widget ul li a {
+          color: #ffffff;
+          text-transform: capitalize;
+          text-decoration: none;
+        }
+        .subscribe-form {
+          position: relative;
+          overflow: hidden;
+        }
+        .subscribe-form input {
+          width: 100%;
+          padding: 14px 28px;
+          background: #ffffff;
+          border: 1px solid #2E2E2E;
+          color: #fff;
+        }
+        .subscribe-form button {
+            position: absolute;
+            right: 0;
+            background: #cc007e;
+            padding: 14px 20px;
+            margin-top: .75px;
+            margin-right: .75px;
+            top: 0;
+            cursor: pointer;
+        }
+        .subscribe-form button svg {
+          color: #fff;
+          height: 25px;
+          transform: rotate(-6deg);
+        }
+        .copyright-area{
+          background: #3e0227;
+          padding-top: 1rem;
+        }
+        .copyright-text p {
+          margin: 0;
+          font-size: 14px;
+          color: #ffffff;
+          text-align: center;
+        }
+        .copyright-text p a{
+          color: #ffffff;
+          text-decoration: none;
+        }
+        .footer-menu li {
+          display: inline-block;
+          margin-left: 20px;
+        }
+        .footer-menu li:hover a{
+          color: #cc007e;
+        }
+        .footer-menu li a {
+          font-size: 14px;
+          color: #ffffff;
+          text-decoration: none;
+        }
+        .footer-menu ul {
+            list-style: none;
+            margin-bottom: 0;
+        }
+
+/* Updated media query to ensure footer widgets stay on same line and proper CTA positioning */
+@media screen and (min-width: 992px) {
+  .footer-container {
+    max-width: 960px;
+    margin: 0 auto; /* Center the container */
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  /* Footer CTA section - ensure it stays on top and centered */
+  .footer-cta {
+    width: 100%;
+    order: 1;
+  }
+  
+  .footer-cta .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  
+  /* Footer content section - comes after CTA and centered */
+  .footer-content {
+    width: 100%;
+    order: 2;
+  }
+  
+  .footer-content .row {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  
+  .footer-content .row > [class*="col-"] {
+    flex: 1;
+    max-width: none;
+    margin-bottom: 0;
+  }
+  
+  .footer-widget {
+    height: 100%;
+  }
 }
